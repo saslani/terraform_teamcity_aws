@@ -10,11 +10,9 @@ plan:
 
 apply:
 	terraform apply
+
 auto-apply:
 	terraform apply -auto-approve
-
-destroy:
-	terraform destroy
 
 refresh:
 	terraform refresh
