@@ -35,7 +35,6 @@ module "rds" {
 module "backup_bucket" {
   source      = "s3"
   name        = "${var.unique_s3_name}"
-  description = "TeamCity Backups"
 }
 
 module "ec2" {
