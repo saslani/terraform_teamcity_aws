@@ -1,6 +1,7 @@
 provider "aws" {
   access_key = "${var.aws_access_key}"
   secret_key = "${var.aws_secret_key}"
+  version    = "2.11.0"
   region     = "${var.region}"
 }
 
@@ -34,7 +35,6 @@ module "rds" {
 module "backup_bucket" {
   source      = "s3"
   name        = "${var.unique_s3_name}"
-  description = "TeamCity Backups"
 }
 
 module "ec2" {
