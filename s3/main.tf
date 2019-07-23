@@ -1,8 +1,9 @@
 resource "aws_s3_bucket" "backup_bucket" {
-  bucket = "${var.name}"
+  bucket = var.name
   acl    = "private"
 
-  tags {
-    Name = "${var.description}"
+  tags = {
+    Name = var.description
   }
 }
+

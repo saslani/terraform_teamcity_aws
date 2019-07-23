@@ -1,7 +1,7 @@
 resource "aws_security_group" "teamcity_web_sg" {
   name        = "TeamCity_sg"
   description = "Allow TeamCity SSH & HTTP inbound connection"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 22
@@ -24,7 +24,7 @@ resource "aws_security_group" "teamcity_web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name = "TeamCity Web Security Group"
   }
 }
@@ -32,7 +32,7 @@ resource "aws_security_group" "teamcity_web_sg" {
 resource "aws_security_group" "rds_sg" {
   name        = "TeamCity_rds_sg"
   description = "TeamCity RDS Security Group"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 
   # TODO: Should this change to only allow ssh from other IPs?
   ingress {
@@ -56,7 +56,8 @@ resource "aws_security_group" "rds_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name = "TeamCity RDS Security Group"
   }
 }
+
