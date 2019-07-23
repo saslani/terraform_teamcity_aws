@@ -11,7 +11,7 @@ variable "db_name" {
 }
 
 variable "db_password" {
-  type = "string"
+  type = string
 }
 
 variable "db_username" {
@@ -34,7 +34,7 @@ variable "ssh_path" {
   default = "~/.ssh"
 }
 
-
 variable "unique_s3_name" {
-  type = "string"
+  type = string
 }
+

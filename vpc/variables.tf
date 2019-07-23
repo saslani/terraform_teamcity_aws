@@ -1,6 +1,6 @@
 variable "availability_zones" {
   description = "List of availability zones over which to distribute subnets"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "length" {
@@ -12,6 +12,7 @@ variable "public_cidr_block" {
 }
 
 variable "private_cidr_block" {
-  type    = "list"
+  type    = list(string)
   default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
+
