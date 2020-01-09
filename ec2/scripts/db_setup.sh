@@ -15,8 +15,8 @@ sudo docker rm $(docker ps -aq)
 sudo docker pull jetbrains/teamcity-server
 DEBIAN_FRONTEND=noninteractive sudo apt-get update -y
 DEBIAN_FRONTEND=noninteractive sudo apt-get install -y wget
-wget https://jdbc.postgresql.org/download/postgresql-9.4.1209.jre6.jar 
-sudo mv postgresql-9.4.1209.jre6.jar /opt/teamcity/lib/jdbc/
+wget https://jdbc.postgresql.org/download/postgresql-42.2.9.jre6.jar
+sudo mv postgresql-42.2.9.jre6.jar /opt/teamcity/lib/jdbc/
 sudo tee /opt/teamcity/config/database.properties <<EOF
 connectionUrl=jdbc:postgresql://${db_url}:${db_port}/${db_name}
 connectionProperties.user=${db_username}
